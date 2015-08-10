@@ -1,0 +1,10 @@
+<h2>Tell us a little about yourself</h2>
+<%= form_for(@user, :url => wizard_path, :method => :put) do |f| %>
+  <div class="field">
+    <%= f.text_field :user_bio, :placeholder => 'Bio' %>
+  </div>
+
+  <%= f.submit 'Next', :class => 'btn brn-primary' %>
+<% end %>
+
+<%= link_to 'skip', next_wizard_path %>

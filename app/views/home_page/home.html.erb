@@ -1,0 +1,32 @@
+<% provide(:title, "Peeks") %>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "Peeks", root_path, id: "logo" %>
+
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><% if user_signed_in? %>
+          Logged in as  <strong><%= current_user.email %></strong>
+          <%end%></li>
+        <li><%= link_to "Sign up", new_user_registration_path %></li>
+        <li><%= link_to "Log In", new_user_session_path %></li>
+        <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="center jumbotron">
+  <div class="container">
+    <h1>Peeks</h1>
+    <% if user_signed_in? %>
+    <p>This is <%= current_user.email %>'s home page</p>
+    <% else %>
+    <p>This is the home page</p>
+    <%end%>
+    <h4><%= link_to 'New Post', new_post_path %></h4>
+  </div>
+</div>
+
+
+    <%= render partial: "posts/post", :collection => @post %>

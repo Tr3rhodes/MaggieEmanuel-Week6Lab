@@ -5,13 +5,17 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'devise'
+gem 'wicked', '~> 1.1.1'
 
 gem 'faker'
 # Use SCSS for stylesheets
 
-gem 'bootstrap_form'
-gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass', '~> 3.3.5.1'
+gem 'bootstrap_forms', '~> 4.0.1'
+gem 'bootstrap-generators', '~> 3.3.4'
+gem 'angularjs-rails'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
