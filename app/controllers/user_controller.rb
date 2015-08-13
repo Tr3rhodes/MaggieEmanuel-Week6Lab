@@ -27,20 +27,31 @@ class UserController < ApplicationController
   end
 
   def follow
-
     @user = User.find(params[:id])
       if current_user == @user
-      flash[:notice] = "You are cannot follow yourself"
+        respond_to do |format|
+          format.html {flash[:notice] = "You are cannot follow yourself"}
+          format.js { }
+          redirect_to :posts
+
+        end
       else
-        current_user.follow(@user)
+        respond_to do |format|
+          format.html {current_user.follow(@user)}
+          format.js {  }
       end
+      # change logic js
       redirect_to :posts
+    end
   end
 
   def unfollow
     @user = User.find(params[:id])
-        current_user.stop_following(@user)
-        redirect_to :posts
+      respond_to do |format|
+          format.html {current_user.stop_following(@user)}
+          format.js { render :follow }
+          # change logic js
+          redirect_to :posts
+      end
   end
-
 end

@@ -1,0 +1,17 @@
+// +if($("#ajax-flashes p").length > 0){
+// +  $("#ajax-flashes").fadeOut();
+// +}
+// +$("#ajax-flashes p").remove();
+// +$('#link-<%= @link.id %>').replaceWith("<%= escape_javascript(render :partial => "links/votinglinks", :locals => {:link => @link}) %>");
+// +$("#ajax-flashes").addClass("alert-success");
+// +$("#ajax-flashes").append("<p>Vote updated!</p>");
+// +$("#ajax-flashes").fadeIn();
+
+// $(.btn btn-info #follow-button)
+$(function() {
+$('.btn btn-info #follow-button:contains("Follow")').text('Unfollow');
+$('.btn btn-info #follow-button').html(function () {
+    return $(this).text();
+}); });
+// $(#follow-button)
+// $(#follow-button)
