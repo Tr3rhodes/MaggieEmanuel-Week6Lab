@@ -1,6 +1,9 @@
-<h1>Editing Post</h1>
+<%= render :partial => 'header'%>
+<div class="container ol-md-offset-4 col-md-4"
+  <h1>Edit Post</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+  <%= link_to 'Show', @post %> |
+  <%= link_to 'Back', posts_path %>
+</div>

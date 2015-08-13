@@ -1,28 +1,33 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<% provide(:title, "Sign Up") %>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "Peeks", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Log In", new_user_session_path %></li>
+        <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container col-md-offset-4 col-md-4 center" style="padding-top: 100px">
+  <h2>Let's get started!</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-<!--
-<%= render "devise/shared/links" %> -->
+    <div class="field">
+      <%= f.email_field :email, :placeholder => "email", autofocus: true %>
+    </div>
+    <div class="field">
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, :placeholder => "password", autocomplete: "off" %>
+    </div>
+    <div class="field">
+      <%= f.password_field :password_confirmation, :placeholder => "password confirmation", autocomplete: "off" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Sign up" %>
+    </div>
+  <% end %>
+</div>

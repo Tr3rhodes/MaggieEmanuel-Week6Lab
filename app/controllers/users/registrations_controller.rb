@@ -9,7 +9,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 protected
   # POST /resource
   def after_sign_up_path_for(resource)
-    users_step_path(:username)
+    user_step_path(:username)
   end
 
 

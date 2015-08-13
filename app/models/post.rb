@@ -2,7 +2,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   validates :user_id, presence: true
   validates :body, presence: true
-  
+  validates_length_of :body, maximum: 170
+
 
   def self.timeline(user)
     following_ids = user.all_following.map(&:id)

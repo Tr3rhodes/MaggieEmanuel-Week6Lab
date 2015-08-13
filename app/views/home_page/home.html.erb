@@ -19,14 +19,19 @@
 <div class="center jumbotron">
   <div class="container">
     <h1>Peeks</h1>
-    <% if user_signed_in? %>
-    <p>This is <%= current_user.email %>'s home page</p>
-    <% else %>
-    <p>This is the home page</p>
-    <%end%>
-    <h4><%= link_to 'New Post', new_post_path %></h4>
+
+    <p>Get a peek at what's going on right now.</p>
+    <br>
+    <br>
+    <br>
+    <p>Connect with others!</p>
+    <div class="btn btn-info btn-lg">
+      <%= link_to "Users", user_index_path %>
+    </div>
+
   </div>
 </div>
 
+<div class="post">
 
-    <%= render partial: "posts/post", :collection => @post %>
+</div>

@@ -1,10 +1,13 @@
-<h2>Tell us a little about yourself</h2>
-<%= form_for(@user, :url => wizard_path, :method => :put) do |f| %>
-  <div class="field">
-    <%= f.text_field :user_bio, :placeholder => 'Bio' %>
-  </div>
-
-  <%= f.submit 'Next', :class => 'btn brn-primary' %>
-<% end %>
-
-<%= link_to 'skip', next_wizard_path %>
+<%= render :partial => 'header'%>
+<div class="container col-md-offset-4 col-md-4 center" style="padding-top: 100px">
+  <h2>Tell a little about yourself</h2>
+  <%= form_for(@user, :url => wizard_path, :method => :put) do |f| %>
+    <div class="field">
+      <%= f.text_field :user_bio %>
+    </div>
+    <div class="row">
+      <%= f.submit 'Done', :class => 'btn brn-primary' %>
+  <% end %>
+      <%= link_to 'skip', next_wizard_path %>
+    </div>
+</div>

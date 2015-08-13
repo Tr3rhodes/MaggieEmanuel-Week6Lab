@@ -9,7 +9,7 @@ gem 'wicked', '~> 1.1.1'
 
 gem 'faker'
 # Use SCSS for stylesheets
-
+gem 'kaminari'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'bootstrap_forms', '~> 4.0.1'

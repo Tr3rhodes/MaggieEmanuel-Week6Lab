@@ -1,4 +1,4 @@
-<%= render :partial => 'header'%>
+
 <div class="container col-md-offset-2">
   <h1>Listing Posts</h1>
   <h4>Timeline</h4>
@@ -10,7 +10,6 @@
         <div>
           <div>
             <b><%= link_to post.user.username, user_path(:id => post.user_id) %></b>
-            <%= link_to "UnFollow", unfollow_path(:id => post.user.id), :method => :post %>
           </div>
           <br>
           <div>

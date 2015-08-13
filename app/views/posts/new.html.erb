@@ -1,5 +1,8 @@
-<h1>New Post</h1>
+<%= render :partial => 'header'%>
+<div class="container col-md-offset-4 col-md-4">
+  <h1>What's on your mind?</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Back', posts_path %>
+  <%= link_to 'Back', posts_path %>
+</div>

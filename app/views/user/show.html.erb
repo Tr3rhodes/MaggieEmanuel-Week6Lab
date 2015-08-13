@@ -1,9 +1,33 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<%= render :partial => 'header'%>
+<div class="container col-md-offset-1" style="padding-top: 40px">
+  <div class= "col-md-2">
+    <div class="thumbnail">
+      <img src="<%= @user.user_photo %>" alt="picture">
+    </div>
+  </div>
+  <div class="container col-md-offset-1">
+    <div class="row">
+      <div class="span4">
+        <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+        <h5><%= @user.username %></h5>
+      </div>
+      <div class="span6">
+        <p><%= @user.user_bio %></p>
+      </div>
+      <div class="btn btn-primary">
+        <%= link_to "Post", new_post_path %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container col-md-offset-1">
+  <div class="span6">
+    <ul class="list-style-none list-inline">
+      <li><h5><%= @user.follow_count %> FOLLOWING</h5></li>
+      <li><h5><%= @user.followers_count %> FOLLOWERS</h5></li>
+    </ul>
+  </div>
 
-
-
-
-
-<%= link_to "Follow", follow_user_path(@user) %>
-<%= link_to "UnFollow", unfollow_user_path(@user) %>
+  <div class="col-md-2 btn btn-info">
+    <%=link_to "Timeline", posts_path(:id => @user.id)  %>
+</div>

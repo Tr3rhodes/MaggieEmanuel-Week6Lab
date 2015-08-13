@@ -1,0 +1,13 @@
+<% provide(:title, "Posts") %>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to "Peeks", root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Users", user_index_path %></li>
+        <li><%= link_to "Profile", user_path(:id => current_user.id) %></li>
+        <li><%= link_to "Log out", destroy_user_session_path, :method => :delete %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
